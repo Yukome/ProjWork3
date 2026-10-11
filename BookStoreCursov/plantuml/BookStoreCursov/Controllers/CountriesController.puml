@@ -1,0 +1,11 @@
+@startuml
+class CountriesController {
+    + CountriesController(context:BookStoreCursContext)
+    + <<async>> GetCountries() : Task<ActionResult<IEnumerable<Country>>>
+    + <<async>> GetCountry(id:int) : Task<ActionResult<Country>>
+    + <<async>> PutCountry(id:int, country:Country) : Task<IActionResult>
+    + <<async>> PostCountry(country:Country) : Task<ActionResult<Country>>
+    + <<async>> DeleteCountry(id:int) : Task<IActionResult>
+}
+ControllerBase <|-- CountriesController
+@enduml

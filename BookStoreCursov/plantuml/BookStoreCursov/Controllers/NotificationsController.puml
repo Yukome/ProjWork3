@@ -1,0 +1,14 @@
+@startuml
+class NotificationsController {
+    + NotificationsController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetNotifications() : Task<ActionResult<IEnumerable<Notification>>>
+    + <<async>> GetNotification(id:int) : Task<ActionResult<Notification>>
+    + <<async>> PutNotification(id:int, notification:Notification) : Task<IActionResult>
+    + <<async>> PostNotification(notification:Notification) : Task<ActionResult<Notification>>
+    + <<async>> DeleteNotification(id:int) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+ControllerBase <|-- NotificationsController
+@enduml

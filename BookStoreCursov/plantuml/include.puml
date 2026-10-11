@@ -1,0 +1,375 @@
+@startuml
+class Program {
+    + {static} Main(args:string[]) : void
+}
+class WeatherForecast {
+    + TemperatureC : int <<get>> <<set>>
+    + TemperatureF : int <<get>>
+    + Summary : string? <<get>> <<set>>
+}
+WeatherForecast --> "Date" DateOnly
+class AuthController {
+    + AuthController(context:BookStoreCursContext, emailService:IEmailService)
+    + <<async>> Login(loginModel:Auth.LoginModel) : Task<ActionResult<object>>
+    + <<async>> Register(registerModel:Auth.RegisterModel) : Task<ActionResult<object>>
+    + <<async>> ChangePassword(model:ChangePasswordModel) : Task<IActionResult>
+    + <<async>> ForgotPassword(model:ForgotPasswordModel) : Task<IActionResult>
+    + <<async>> CheckRole(userId:int) : Task<ActionResult<object>>
+}
+class ChangePasswordModel {
+    + UserId : int <<get>> <<set>>
+    + OldPassword : string <<get>> <<set>>
+    + NewPassword : string <<get>> <<set>>
+}
+class ForgotPasswordModel {
+    + Login : string <<get>> <<set>>
+}
+ControllerBase <|-- AuthController
+class AuthorsController {
+    + AuthorsController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetAuthors() : Task<ActionResult<IEnumerable<Author>>>
+    + <<async>> GetAuthor(id:int) : Task<ActionResult<Author>>
+    + <<async>> PutAuthor(id:int, author:Author) : Task<IActionResult>
+    + <<async>> PostAuthor(author:Author) : Task<ActionResult<Author>>
+    + <<async>> DeleteAuthor(id:int) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+ControllerBase <|-- AuthorsController
+class BooksController {
+    + BooksController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetBooks() : Task<ActionResult<IEnumerable<Book>>>
+    + <<async>> GetBook(id:int) : Task<ActionResult<Book>>
+    + <<async>> PutBook(id:int, book:Book) : Task<IActionResult>
+    + <<async>> PostBook(book:Book) : Task<ActionResult<Book>>
+    + <<async>> DeleteBook(id:int) : Task<IActionResult>
+    + <<async>> UploadCover(file:IFormFile) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+ControllerBase <|-- BooksController
+class CartsController {
+    + CartsController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetCarts() : Task<ActionResult<IEnumerable<Cart>>>
+    + <<async>> GetCart(id:int) : Task<ActionResult<Cart>>
+    + <<async>> PutCart(id:int, cart:Cart) : Task<IActionResult>
+    + <<async>> PostCart(cart:Cart) : Task<ActionResult<Cart>>
+    + <<async>> DeleteCart(id:int) : Task<IActionResult>
+}
+ControllerBase <|-- CartsController
+class CountriesController {
+    + CountriesController(context:BookStoreCursContext)
+    + <<async>> GetCountries() : Task<ActionResult<IEnumerable<Country>>>
+    + <<async>> GetCountry(id:int) : Task<ActionResult<Country>>
+    + <<async>> PutCountry(id:int, country:Country) : Task<IActionResult>
+    + <<async>> PostCountry(country:Country) : Task<ActionResult<Country>>
+    + <<async>> DeleteCountry(id:int) : Task<IActionResult>
+}
+ControllerBase <|-- CountriesController
+class GenresController {
+    + GenresController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetGenres() : Task<ActionResult<IEnumerable<Genre>>>
+    + <<async>> GetGenre(id:int) : Task<ActionResult<Genre>>
+    + <<async>> PutGenre(id:int, genre:Genre) : Task<IActionResult>
+    + <<async>> PostGenre(genre:Genre) : Task<ActionResult<Genre>>
+    + <<async>> DeleteGenre(id:int) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+ControllerBase <|-- GenresController
+class NotificationsController {
+    + NotificationsController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetNotifications() : Task<ActionResult<IEnumerable<Notification>>>
+    + <<async>> GetNotification(id:int) : Task<ActionResult<Notification>>
+    + <<async>> PutNotification(id:int, notification:Notification) : Task<IActionResult>
+    + <<async>> PostNotification(notification:Notification) : Task<ActionResult<Notification>>
+    + <<async>> DeleteNotification(id:int) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+ControllerBase <|-- NotificationsController
+class OrderPositionsController {
+    + OrderPositionsController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetOrderPositions() : Task<ActionResult<IEnumerable<OrderPosition>>>
+    + <<async>> GetOrderPosition(id:int) : Task<ActionResult<OrderPosition>>
+    + <<async>> PutOrderPosition(id:int, orderPosition:OrderPosition) : Task<IActionResult>
+    + <<async>> PostOrderPosition(orderPosition:OrderPosition) : Task<ActionResult<OrderPosition>>
+    + <<async>> DeleteOrderPosition(id:int) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string, orderId:int?) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string, orderId:int?) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+ControllerBase <|-- OrderPositionsController
+class OrdersController {
+    + OrdersController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetOrders() : Task<ActionResult<IEnumerable<Order>>>
+    + <<async>> GetOrder(id:int) : Task<ActionResult<Order>>
+    + <<async>> PutOrder(id:int, order:Order) : Task<IActionResult>
+    + <<async>> PostOrder(order:Order) : Task<ActionResult<Order>>
+    + <<async>> DeleteOrder(id:int) : Task<IActionResult>
+    + <<async>> DeleteOrderWithPositions(id:int) : Task<IActionResult>
+    + <<async>> UpdateOrderStatus(id:int, model:UpdateStatusModel) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+class UpdateStatusModel {
+    + OrderStatusId : int <<get>> <<set>>
+}
+ControllerBase <|-- OrdersController
+class OrderStatusController {
+    + OrderStatusController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetOrderStatuses() : Task<ActionResult<IEnumerable<OrderStatus>>>
+    + <<async>> GetOrderStatus(id:int) : Task<ActionResult<OrderStatus>>
+    + <<async>> PutOrderStatus(id:int, orderStatus:OrderStatus) : Task<IActionResult>
+    + <<async>> PostOrderStatus(orderStatus:OrderStatus) : Task<ActionResult<OrderStatus>>
+    + <<async>> DeleteOrderStatus(id:int) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+ControllerBase <|-- OrderStatusController
+class PublishingHousesController {
+    + PublishingHousesController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetPublishingHouses() : Task<ActionResult<IEnumerable<PublishingHouse>>>
+    + <<async>> GetPublishingHouse(id:int) : Task<ActionResult<PublishingHouse>>
+    + <<async>> PutPublishingHouse(id:int, publishingHouse:PublishingHouse) : Task<IActionResult>
+    + <<async>> PostPublishingHouse(publishingHouse:PublishingHouse) : Task<ActionResult<PublishingHouse>>
+    + <<async>> DeletePublishingHouse(id:int) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+ControllerBase <|-- PublishingHousesController
+class ReviewsController {
+    + ReviewsController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetReviews() : Task<ActionResult<IEnumerable<Review>>>
+    + <<async>> GetReview(id:int) : Task<ActionResult<Review>>
+    + <<async>> PutReview(id:int, review:Review) : Task<IActionResult>
+    + <<async>> PostReview(review:Review) : Task<ActionResult<Review>>
+    + <<async>> DeleteReview(id:int) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string, rating:int?) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string, rating:int?) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+ControllerBase <|-- ReviewsController
+class RolesController {
+    + RolesController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetRoles() : Task<ActionResult<IEnumerable<Role>>>
+    + <<async>> GetRole(id:int) : Task<ActionResult<Role>>
+    + <<async>> PutRole(id:int, role:Role) : Task<IActionResult>
+    + <<async>> PostRole(role:Role) : Task<ActionResult<Role>>
+    + <<async>> DeleteRole(id:int) : Task<IActionResult>
+}
+ControllerBase <|-- RolesController
+class UsersController {
+    + UsersController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetUsers() : Task<ActionResult<IEnumerable<User>>>
+    + <<async>> GetUser(id:int) : Task<ActionResult<User>>
+    + <<async>> PutUser(id:int, user:User) : Task<IActionResult>
+    + <<async>> PostUser(user:User) : Task<ActionResult<User>>
+    + <<async>> DeleteUser(id:int) : Task<IActionResult>
+    + <<async>> UpdateProfile(id:int, model:UpdateProfileModel) : Task<IActionResult>
+    + <<async>> UpdateAvatar(id:int, avatar:IFormFile?) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string, roleId:int?) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string, roleId:int?) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+class UpdateProfileModel {
+    + UserLogin : string <<get>> <<set>>
+    + Email : string <<get>> <<set>>
+    + UsersName : string <<get>> <<set>>
+    + UsersSurname : string <<get>> <<set>>
+    + UsersPatronymic : string? <<get>> <<set>>
+}
+ControllerBase <|-- UsersController
+UpdateProfileModel --> "DateOfBirth" DateOnly
+class WeatherForecastController {
+    + WeatherForecastController(logger:ILogger<WeatherForecastController>)
+    + Get() : IEnumerable<WeatherForecast>
+}
+ControllerBase <|-- WeatherForecastController
+class Auth {
+}
+class LoginModel <<partial>> {
+    + Login : string <<get>> <<set>>
+    + Password : string <<get>> <<set>>
+}
+class RegisterModel <<partial>> {
+    + Login : string <<get>> <<set>>
+    + Password : string <<get>> <<set>>
+    + Email : string <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+    + Surname : string <<get>> <<set>>
+    + Patronymic : string? <<get>> <<set>>
+}
+Auth +-- LoginModel
+Auth +-- RegisterModel
+RegisterModel --> "DateOfBirth" DateOnly
+class Author <<partial>> {
+    + IdAuthor : int <<get>> <<set>>
+    + AuthorName : string <<get>> <<set>>
+    + AuthorSurname : string <<get>> <<set>>
+    + AuthorPatronymic : string? <<get>> <<set>>
+    + CountryId : int <<get>> <<set>>
+    + Biography : string? <<get>> <<set>>
+}
+Author --> "DateOfBirth" DateOnly
+Author --> "Country" Country
+class Book <<partial>> {
+    + IdBook : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+    + AuthorId : int <<get>> <<set>>
+    + PublishingHouseId : int <<get>> <<set>>
+    + GenreId : int <<get>> <<set>>
+    + Isbn : string <<get>> <<set>>
+    + YearOfPublication : int <<get>> <<set>>
+    + Price : decimal <<get>> <<set>>
+    + Quantity : int <<get>> <<set>>
+    + BookDescription : string <<get>> <<set>>
+    + CoverPath : string? <<get>> <<set>>
+}
+Book --> "AddDate" DateOnly
+Book --> "Author" Author
+Book --> "Genre" Genre
+Book --> "PublishingHouse" PublishingHouse
+class BookStoreCursContext <<partial>> {
+    + BookStoreCursContext()
+    + BookStoreCursContext(options:DbContextOptions<BookStoreCursContext>)
+}
+class "DbSet`1"<T> {
+}
+DbContext <|-- BookStoreCursContext
+BookStoreCursContext --> "Authors<Author>" "DbSet`1"
+BookStoreCursContext --> "Books<Book>" "DbSet`1"
+BookStoreCursContext --> "Carts<Cart>" "DbSet`1"
+BookStoreCursContext --> "Countries<Country>" "DbSet`1"
+BookStoreCursContext --> "Genres<Genre>" "DbSet`1"
+BookStoreCursContext --> "Notifications<Notification>" "DbSet`1"
+BookStoreCursContext --> "Orders<Order>" "DbSet`1"
+BookStoreCursContext --> "OrderPositions<OrderPosition>" "DbSet`1"
+BookStoreCursContext --> "OrderStatuses<OrderStatus>" "DbSet`1"
+BookStoreCursContext --> "PublishingHouses<PublishingHouse>" "DbSet`1"
+BookStoreCursContext --> "Reviews<Review>" "DbSet`1"
+BookStoreCursContext --> "Roles<Role>" "DbSet`1"
+BookStoreCursContext --> "Users<User>" "DbSet`1"
+class Cart <<partial>> {
+    + IdCart : int <<get>> <<set>>
+    + UsersId : int <<get>> <<set>>
+    + BookId : int <<get>> <<set>>
+    + Quantity : int <<get>> <<set>>
+}
+Cart --> "AddDate" DateOnly
+Cart --> "Book" Book
+Cart --> "Users" User
+class Country <<partial>> {
+    + IdCountry : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+}
+class Genre <<partial>> {
+    + IdGenre : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+    + GenreDescription : string? <<get>> <<set>>
+}
+class Notification <<partial>> {
+    + IdNotification : int <<get>> <<set>>
+    + UsersId : int <<get>> <<set>>
+    + NotificationText : string <<get>> <<set>>
+    + StatusN : bool <<get>> <<set>>
+}
+Notification --> "AddDate" DateOnly
+Notification --> "Users" User
+class Order <<partial>> {
+    + IdOrder : int <<get>> <<set>>
+    + UsersId : int <<get>> <<set>>
+    + DeliveryAddress : string <<get>> <<set>>
+    + PaymentMethod : string <<get>> <<set>>
+    + Phone : string <<get>> <<set>>
+    + TotalSum : decimal <<get>> <<set>>
+    + OrderStatusId : int <<get>> <<set>>
+}
+Order --> "AddDate" DateOnly
+Order --> "OrderStatus" OrderStatus
+Order --> "Users" User
+class OrderPosition <<partial>> {
+    + IdOrderPosition : int <<get>> <<set>>
+    + BookId : int <<get>> <<set>>
+    + Quantity : int <<get>> <<set>>
+    + PurchasePrice : decimal <<get>> <<set>>
+    + OrderId : int <<get>> <<set>>
+}
+OrderPosition --> "Book" Book
+OrderPosition --> "Order" Order
+class OrderStatus <<partial>> {
+    + IdOrderStatus : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+}
+class PublishingHouse <<partial>> {
+    + IdPublishingHouse : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+    + PublishingHouseAddress : string <<get>> <<set>>
+    + Phone : string <<get>> <<set>>
+    + Email : string? <<get>> <<set>>
+}
+class Review <<partial>> {
+    + IdReview : int <<get>> <<set>>
+    + BookId : int <<get>> <<set>>
+    + UsersId : int <<get>> <<set>>
+    + Rating : int <<get>> <<set>>
+    + TextReview : string <<get>> <<set>>
+}
+Review --> "AddDate" DateOnly
+Review --> "Book" Book
+Review --> "Users" User
+class Role <<partial>> {
+    + IdRole : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+}
+class User <<partial>> {
+    + IdUser : int <<get>> <<set>>
+    + UserLogin : string <<get>> <<set>>
+    + PasswordHash : string <<get>> <<set>>
+    + Email : string <<get>> <<set>>
+    + UsersName : string <<get>> <<set>>
+    + UsersSurname : string <<get>> <<set>>
+    + UsersPatronymic : string? <<get>> <<set>>
+    + AvatarPath : string? <<get>> <<set>>
+    + RoleId : int <<get>> <<set>>
+}
+User --> "DateOfBirth" DateOnly
+User --> "Role" Role
+class EmailService {
+    + EmailService(configuration:IConfiguration)
+    + <<async>> SendPasswordResetEmailAsync(email:string, newPassword:string) : Task
+    + <<async>> SendEmailAsync(toEmail:string, subject:string, body:string) : Task<bool>
+}
+IEmailService <|-- EmailService
+class ExcelService {
+    + ExcelService()
+    + ExportToExcel(data:List<T>, sheetName:string, customFields:Dictionary<string, Func<T, string>>) : byte[]
+    + ExportToCsv(data:List<T>, customFields:Dictionary<string, Func<T, string>>) : byte[]
+    + <<async>> ImportFromExcelAsync(fileStream:Stream, context:BookStoreCursContext, validateAndCreate:Func<Dictionary<string, object>, int, Task<(bool isValid, string error, T entity)>>) : Task<ImportResult>
+}
+class "ExportColumn`1"<T> {
+    + Header : string <<get>> <<set>>
+}
+class ImportResult {
+    + Added : int <<get>> <<set>>
+    + Skipped : int <<get>> <<set>>
+}
+class "Func`2"<T1,T2> {
+}
+class "List`1"<T> {
+}
+IExcelService <|-- ExcelService
+"ExportColumn`1" --> "ValueGetter<T,string>" "Func`2"
+ImportResult o-> "Errors<string>" "List`1"
+interface IEmailService {
+}
+interface IExcelService {
+}
+@enduml

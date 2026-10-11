@@ -1,0 +1,9 @@
+@startuml
+class PublishingHouse <<partial>> {
+    + IdPublishingHouse : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+    + PublishingHouseAddress : string <<get>> <<set>>
+    + Phone : string <<get>> <<set>>
+    + Email : string? <<get>> <<set>>
+}
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class OrderPosition <<partial>> {
+    + IdOrderPosition : int <<get>> <<set>>
+    + BookId : int <<get>> <<set>>
+    + Quantity : int <<get>> <<set>>
+    + PurchasePrice : decimal <<get>> <<set>>
+    + OrderId : int <<get>> <<set>>
+}
+OrderPosition --> "Book" Book
+OrderPosition --> "Order" Order
+@enduml

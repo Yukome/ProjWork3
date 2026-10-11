@@ -1,0 +1,14 @@
+@startuml
+class PublishingHousesController {
+    + PublishingHousesController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetPublishingHouses() : Task<ActionResult<IEnumerable<PublishingHouse>>>
+    + <<async>> GetPublishingHouse(id:int) : Task<ActionResult<PublishingHouse>>
+    + <<async>> PutPublishingHouse(id:int, publishingHouse:PublishingHouse) : Task<IActionResult>
+    + <<async>> PostPublishingHouse(publishingHouse:PublishingHouse) : Task<ActionResult<PublishingHouse>>
+    + <<async>> DeletePublishingHouse(id:int) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+ControllerBase <|-- PublishingHousesController
+@enduml

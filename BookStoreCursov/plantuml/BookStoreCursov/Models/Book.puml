@@ -1,0 +1,19 @@
+@startuml
+class Book <<partial>> {
+    + IdBook : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+    + AuthorId : int <<get>> <<set>>
+    + PublishingHouseId : int <<get>> <<set>>
+    + GenreId : int <<get>> <<set>>
+    + Isbn : string <<get>> <<set>>
+    + YearOfPublication : int <<get>> <<set>>
+    + Price : decimal <<get>> <<set>>
+    + Quantity : int <<get>> <<set>>
+    + BookDescription : string <<get>> <<set>>
+    + CoverPath : string? <<get>> <<set>>
+}
+Book --> "AddDate" DateOnly
+Book --> "Author" Author
+Book --> "Genre" Genre
+Book --> "PublishingHouse" PublishingHouse
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class Cart <<partial>> {
+    + IdCart : int <<get>> <<set>>
+    + UsersId : int <<get>> <<set>>
+    + BookId : int <<get>> <<set>>
+    + Quantity : int <<get>> <<set>>
+}
+Cart --> "AddDate" DateOnly
+Cart --> "Book" Book
+Cart --> "Users" User
+@enduml

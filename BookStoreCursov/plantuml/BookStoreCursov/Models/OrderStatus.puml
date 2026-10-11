@@ -1,0 +1,6 @@
+@startuml
+class OrderStatus <<partial>> {
+    + IdOrderStatus : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+}
+@enduml

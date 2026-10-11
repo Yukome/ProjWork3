@@ -1,0 +1,15 @@
+@startuml
+class User <<partial>> {
+    + IdUser : int <<get>> <<set>>
+    + UserLogin : string <<get>> <<set>>
+    + PasswordHash : string <<get>> <<set>>
+    + Email : string <<get>> <<set>>
+    + UsersName : string <<get>> <<set>>
+    + UsersSurname : string <<get>> <<set>>
+    + UsersPatronymic : string? <<get>> <<set>>
+    + AvatarPath : string? <<get>> <<set>>
+    + RoleId : int <<get>> <<set>>
+}
+User --> "DateOfBirth" DateOnly
+User --> "Role" Role
+@enduml

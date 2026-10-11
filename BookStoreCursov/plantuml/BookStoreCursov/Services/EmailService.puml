@@ -1,0 +1,8 @@
+@startuml
+class EmailService {
+    + EmailService(configuration:IConfiguration)
+    + <<async>> SendPasswordResetEmailAsync(email:string, newPassword:string) : Task
+    + <<async>> SendEmailAsync(toEmail:string, subject:string, body:string) : Task<bool>
+}
+IEmailService <|-- EmailService
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+class OrdersController {
+    + OrdersController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetOrders() : Task<ActionResult<IEnumerable<Order>>>
+    + <<async>> GetOrder(id:int) : Task<ActionResult<Order>>
+    + <<async>> PutOrder(id:int, order:Order) : Task<IActionResult>
+    + <<async>> PostOrder(order:Order) : Task<ActionResult<Order>>
+    + <<async>> DeleteOrder(id:int) : Task<IActionResult>
+    + <<async>> DeleteOrderWithPositions(id:int) : Task<IActionResult>
+    + <<async>> UpdateOrderStatus(id:int, model:UpdateStatusModel) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+class UpdateStatusModel {
+    + OrderStatusId : int <<get>> <<set>>
+}
+ControllerBase <|-- OrdersController
+@enduml

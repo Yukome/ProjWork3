@@ -1,0 +1,22 @@
+@startuml
+class ExcelService {
+    + ExcelService()
+    + ExportToExcel(data:List<T>, sheetName:string, customFields:Dictionary<string, Func<T, string>>) : byte[]
+    + ExportToCsv(data:List<T>, customFields:Dictionary<string, Func<T, string>>) : byte[]
+    + <<async>> ImportFromExcelAsync(fileStream:Stream, context:BookStoreCursContext, validateAndCreate:Func<Dictionary<string, object>, int, Task<(bool isValid, string error, T entity)>>) : Task<ImportResult>
+}
+class "ExportColumn`1"<T> {
+    + Header : string <<get>> <<set>>
+}
+class ImportResult {
+    + Added : int <<get>> <<set>>
+    + Skipped : int <<get>> <<set>>
+}
+class "Func`2"<T1,T2> {
+}
+class "List`1"<T> {
+}
+IExcelService <|-- ExcelService
+"ExportColumn`1" --> "ValueGetter<T,string>" "Func`2"
+ImportResult o-> "Errors<string>" "List`1"
+@enduml

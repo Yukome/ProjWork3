@@ -1,0 +1,22 @@
+@startuml
+class BookStoreCursContext <<partial>> {
+    + BookStoreCursContext()
+    + BookStoreCursContext(options:DbContextOptions<BookStoreCursContext>)
+}
+class "DbSet`1"<T> {
+}
+DbContext <|-- BookStoreCursContext
+BookStoreCursContext --> "Authors<Author>" "DbSet`1"
+BookStoreCursContext --> "Books<Book>" "DbSet`1"
+BookStoreCursContext --> "Carts<Cart>" "DbSet`1"
+BookStoreCursContext --> "Countries<Country>" "DbSet`1"
+BookStoreCursContext --> "Genres<Genre>" "DbSet`1"
+BookStoreCursContext --> "Notifications<Notification>" "DbSet`1"
+BookStoreCursContext --> "Orders<Order>" "DbSet`1"
+BookStoreCursContext --> "OrderPositions<OrderPosition>" "DbSet`1"
+BookStoreCursContext --> "OrderStatuses<OrderStatus>" "DbSet`1"
+BookStoreCursContext --> "PublishingHouses<PublishingHouse>" "DbSet`1"
+BookStoreCursContext --> "Reviews<Review>" "DbSet`1"
+BookStoreCursContext --> "Roles<Role>" "DbSet`1"
+BookStoreCursContext --> "Users<User>" "DbSet`1"
+@enduml

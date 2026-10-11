@@ -1,0 +1,10 @@
+@startuml
+class Notification <<partial>> {
+    + IdNotification : int <<get>> <<set>>
+    + UsersId : int <<get>> <<set>>
+    + NotificationText : string <<get>> <<set>>
+    + StatusN : bool <<get>> <<set>>
+}
+Notification --> "AddDate" DateOnly
+Notification --> "Users" User
+@enduml

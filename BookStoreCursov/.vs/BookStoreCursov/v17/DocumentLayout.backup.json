@@ -1,0 +1,136 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9F575142-E2BB-4B7E-94F1-4C1B208EA9F9}|BookStoreCursov\\BookStoreCursov.csproj|c:\\users\\anastasia\\source\\repos\\bookstorecursov\\bookstorecursov\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F575142-E2BB-4B7E-94F1-4C1B208EA9F9}|BookStoreCursov\\BookStoreCursov.csproj|solutionrelative:bookstorecursov\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F575142-E2BB-4B7E-94F1-4C1B208EA9F9}|BookStoreCursov\\BookStoreCursov.csproj|c:\\users\\anastasia\\source\\repos\\bookstorecursov\\bookstorecursov\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F575142-E2BB-4B7E-94F1-4C1B208EA9F9}|BookStoreCursov\\BookStoreCursov.csproj|solutionrelative:bookstorecursov\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F575142-E2BB-4B7E-94F1-4C1B208EA9F9}|BookStoreCursov\\BookStoreCursov.csproj|c:\\users\\anastasia\\source\\repos\\bookstorecursov\\bookstorecursov\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F575142-E2BB-4B7E-94F1-4C1B208EA9F9}|BookStoreCursov\\BookStoreCursov.csproj|solutionrelative:bookstorecursov\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F575142-E2BB-4B7E-94F1-4C1B208EA9F9}|BookStoreCursov\\BookStoreCursov.csproj|c:\\users\\anastasia\\source\\repos\\bookstorecursov\\bookstorecursov\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F575142-E2BB-4B7E-94F1-4C1B208EA9F9}|BookStoreCursov\\BookStoreCursov.csproj|solutionrelative:bookstorecursov\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F575142-E2BB-4B7E-94F1-4C1B208EA9F9}|BookStoreCursov\\BookStoreCursov.csproj|c:\\users\\anastasia\\source\\repos\\bookstorecursov\\bookstorecursov\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F575142-E2BB-4B7E-94F1-4C1B208EA9F9}|BookStoreCursov\\BookStoreCursov.csproj|solutionrelative:bookstorecursov\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F575142-E2BB-4B7E-94F1-4C1B208EA9F9}|BookStoreCursov\\BookStoreCursov.csproj|c:\\users\\anastasia\\source\\repos\\bookstorecursov\\bookstorecursov\\appmetrics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F575142-E2BB-4B7E-94F1-4C1B208EA9F9}|BookStoreCursov\\BookStoreCursov.csproj|solutionrelative:bookstorecursov\\appmetrics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F575142-E2BB-4B7E-94F1-4C1B208EA9F9}|BookStoreCursov\\BookStoreCursov.csproj|c:\\users\\anastasia\\source\\repos\\bookstorecursov\\bookstorecursov\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F575142-E2BB-4B7E-94F1-4C1B208EA9F9}|BookStoreCursov\\BookStoreCursov.csproj|solutionrelative:bookstorecursov\\controllers\\reviewscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthorsController.cs",
+              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\BookStoreCursov\\Controllers\\AuthorsController.cs",
+              "RelativeDocumentMoniker": "BookStoreCursov\\Controllers\\AuthorsController.cs",
+              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\BookStoreCursov\\Controllers\\AuthorsController.cs",
+              "RelativeToolTip": "BookStoreCursov\\Controllers\\AuthorsController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwCUAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-10T08:30:58.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\BookStoreCursov\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "BookStoreCursov\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\BookStoreCursov\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "BookStoreCursov\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-10T07:35:30.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\BookStoreCursov\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "BookStoreCursov\\Controllers\\BooksController.cs",
+              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\BookStoreCursov\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "BookStoreCursov\\Controllers\\BooksController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwAkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-03T21:53:56.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ReviewsController.cs",
+              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\BookStoreCursov\\Controllers\\ReviewsController.cs",
+              "RelativeDocumentMoniker": "BookStoreCursov\\Controllers\\ReviewsController.cs",
+              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\BookStoreCursov\\Controllers\\ReviewsController.cs",
+              "RelativeToolTip": "BookStoreCursov\\Controllers\\ReviewsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-03T21:53:26.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppMetrics.cs",
+              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\BookStoreCursov\\AppMetrics.cs",
+              "RelativeDocumentMoniker": "BookStoreCursov\\AppMetrics.cs",
+              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\BookStoreCursov\\AppMetrics.cs",
+              "RelativeToolTip": "BookStoreCursov\\AppMetrics.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-03T21:48:52.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\BookStoreCursov\\Program.cs",
+              "RelativeDocumentMoniker": "BookStoreCursov\\Program.cs",
+              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\BookStoreCursov\\Program.cs",
+              "RelativeToolTip": "BookStoreCursov\\Program.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAADsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T10:13:14.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\BookStoreCursov\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "BookStoreCursov\\Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\Anastasia\\source\\repos\\BookStoreCursov\\BookStoreCursov\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "BookStoreCursov\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-01T12:55:26.025Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

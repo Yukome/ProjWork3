@@ -1,0 +1,11 @@
+@startuml
+class CartsController {
+    + CartsController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetCarts() : Task<ActionResult<IEnumerable<Cart>>>
+    + <<async>> GetCart(id:int) : Task<ActionResult<Cart>>
+    + <<async>> PutCart(id:int, cart:Cart) : Task<IActionResult>
+    + <<async>> PostCart(cart:Cart) : Task<ActionResult<Cart>>
+    + <<async>> DeleteCart(id:int) : Task<IActionResult>
+}
+ControllerBase <|-- CartsController
+@enduml

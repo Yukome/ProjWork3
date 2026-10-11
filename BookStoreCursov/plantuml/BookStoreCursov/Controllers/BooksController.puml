@@ -1,0 +1,15 @@
+@startuml
+class BooksController {
+    + BooksController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetBooks() : Task<ActionResult<IEnumerable<Book>>>
+    + <<async>> GetBook(id:int) : Task<ActionResult<Book>>
+    + <<async>> PutBook(id:int, book:Book) : Task<IActionResult>
+    + <<async>> PostBook(book:Book) : Task<ActionResult<Book>>
+    + <<async>> DeleteBook(id:int) : Task<IActionResult>
+    + <<async>> UploadCover(file:IFormFile) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+ControllerBase <|-- BooksController
+@enduml

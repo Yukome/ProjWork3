@@ -1,0 +1,14 @@
+@startuml
+class ReviewsController {
+    + ReviewsController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetReviews() : Task<ActionResult<IEnumerable<Review>>>
+    + <<async>> GetReview(id:int) : Task<ActionResult<Review>>
+    + <<async>> PutReview(id:int, review:Review) : Task<IActionResult>
+    + <<async>> PostReview(review:Review) : Task<ActionResult<Review>>
+    + <<async>> DeleteReview(id:int) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string, rating:int?) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string, rating:int?) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+ControllerBase <|-- ReviewsController
+@enduml

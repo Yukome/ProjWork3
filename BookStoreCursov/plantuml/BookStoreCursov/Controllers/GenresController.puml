@@ -1,0 +1,14 @@
+@startuml
+class GenresController {
+    + GenresController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetGenres() : Task<ActionResult<IEnumerable<Genre>>>
+    + <<async>> GetGenre(id:int) : Task<ActionResult<Genre>>
+    + <<async>> PutGenre(id:int, genre:Genre) : Task<IActionResult>
+    + <<async>> PostGenre(genre:Genre) : Task<ActionResult<Genre>>
+    + <<async>> DeleteGenre(id:int) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+ControllerBase <|-- GenresController
+@enduml

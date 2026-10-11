@@ -1,0 +1,19 @@
+@startuml
+class AuthController {
+    + AuthController(context:BookStoreCursContext, emailService:IEmailService)
+    + <<async>> Login(loginModel:Auth.LoginModel) : Task<ActionResult<object>>
+    + <<async>> Register(registerModel:Auth.RegisterModel) : Task<ActionResult<object>>
+    + <<async>> ChangePassword(model:ChangePasswordModel) : Task<IActionResult>
+    + <<async>> ForgotPassword(model:ForgotPasswordModel) : Task<IActionResult>
+    + <<async>> CheckRole(userId:int) : Task<ActionResult<object>>
+}
+class ChangePasswordModel {
+    + UserId : int <<get>> <<set>>
+    + OldPassword : string <<get>> <<set>>
+    + NewPassword : string <<get>> <<set>>
+}
+class ForgotPasswordModel {
+    + Login : string <<get>> <<set>>
+}
+ControllerBase <|-- AuthController
+@enduml

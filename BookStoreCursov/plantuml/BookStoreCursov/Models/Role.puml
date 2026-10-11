@@ -1,0 +1,6 @@
+@startuml
+class Role <<partial>> {
+    + IdRole : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+}
+@enduml

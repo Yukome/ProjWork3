@@ -1,0 +1,12 @@
+@startuml
+class Author <<partial>> {
+    + IdAuthor : int <<get>> <<set>>
+    + AuthorName : string <<get>> <<set>>
+    + AuthorSurname : string <<get>> <<set>>
+    + AuthorPatronymic : string? <<get>> <<set>>
+    + CountryId : int <<get>> <<set>>
+    + Biography : string? <<get>> <<set>>
+}
+Author --> "DateOfBirth" DateOnly
+Author --> "Country" Country
+@enduml

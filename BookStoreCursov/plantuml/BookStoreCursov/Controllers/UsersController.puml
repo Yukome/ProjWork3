@@ -1,0 +1,24 @@
+@startuml
+class UsersController {
+    + UsersController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetUsers() : Task<ActionResult<IEnumerable<User>>>
+    + <<async>> GetUser(id:int) : Task<ActionResult<User>>
+    + <<async>> PutUser(id:int, user:User) : Task<IActionResult>
+    + <<async>> PostUser(user:User) : Task<ActionResult<User>>
+    + <<async>> DeleteUser(id:int) : Task<IActionResult>
+    + <<async>> UpdateProfile(id:int, model:UpdateProfileModel) : Task<IActionResult>
+    + <<async>> UpdateAvatar(id:int, avatar:IFormFile?) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string, roleId:int?) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string, roleId:int?) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+class UpdateProfileModel {
+    + UserLogin : string <<get>> <<set>>
+    + Email : string <<get>> <<set>>
+    + UsersName : string <<get>> <<set>>
+    + UsersSurname : string <<get>> <<set>>
+    + UsersPatronymic : string? <<get>> <<set>>
+}
+ControllerBase <|-- UsersController
+UpdateProfileModel --> "DateOfBirth" DateOnly
+@enduml

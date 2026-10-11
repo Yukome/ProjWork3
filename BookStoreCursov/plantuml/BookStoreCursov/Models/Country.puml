@@ -1,0 +1,6 @@
+@startuml
+class Country <<partial>> {
+    + IdCountry : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+}
+@enduml

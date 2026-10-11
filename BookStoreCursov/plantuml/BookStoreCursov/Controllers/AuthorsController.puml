@@ -1,0 +1,14 @@
+@startuml
+class AuthorsController {
+    + AuthorsController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetAuthors() : Task<ActionResult<IEnumerable<Author>>>
+    + <<async>> GetAuthor(id:int) : Task<ActionResult<Author>>
+    + <<async>> PutAuthor(id:int, author:Author) : Task<IActionResult>
+    + <<async>> PostAuthor(author:Author) : Task<ActionResult<Author>>
+    + <<async>> DeleteAuthor(id:int) : Task<IActionResult>
+    + <<async>> ExportToExcel(search:string) : Task<IActionResult>
+    + <<async>> ExportToCsv(search:string) : Task<IActionResult>
+    + <<async>> ImportFromExcel(file:IFormFile) : Task<IActionResult>
+}
+ControllerBase <|-- AuthorsController
+@enduml

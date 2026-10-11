@@ -1,0 +1,7 @@
+@startuml
+class Genre <<partial>> {
+    + IdGenre : int <<get>> <<set>>
+    + Title : string <<get>> <<set>>
+    + GenreDescription : string? <<get>> <<set>>
+}
+@enduml

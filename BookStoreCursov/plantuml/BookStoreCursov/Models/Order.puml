@@ -1,0 +1,14 @@
+@startuml
+class Order <<partial>> {
+    + IdOrder : int <<get>> <<set>>
+    + UsersId : int <<get>> <<set>>
+    + DeliveryAddress : string <<get>> <<set>>
+    + PaymentMethod : string <<get>> <<set>>
+    + Phone : string <<get>> <<set>>
+    + TotalSum : decimal <<get>> <<set>>
+    + OrderStatusId : int <<get>> <<set>>
+}
+Order --> "AddDate" DateOnly
+Order --> "OrderStatus" OrderStatus
+Order --> "Users" User
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class RolesController {
+    + RolesController(context:BookStoreCursContext, excelService:IExcelService)
+    + <<async>> GetRoles() : Task<ActionResult<IEnumerable<Role>>>
+    + <<async>> GetRole(id:int) : Task<ActionResult<Role>>
+    + <<async>> PutRole(id:int, role:Role) : Task<IActionResult>
+    + <<async>> PostRole(role:Role) : Task<ActionResult<Role>>
+    + <<async>> DeleteRole(id:int) : Task<IActionResult>
+}
+ControllerBase <|-- RolesController
+@enduml

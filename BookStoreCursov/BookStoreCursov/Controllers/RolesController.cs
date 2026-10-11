@@ -1,0 +1,168 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using BookStoreCursov.Models;
+using BookStoreCursov.Services;
+
+namespace BookStoreCursov.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class RolesController : ControllerBase
+    {
+        private readonly BookStoreCursContext _context;
+        private readonly IExcelService _excelService;
+
+        public RolesController(BookStoreCursContext context, IExcelService excelService)
+        {
+            _context = context;
+            _excelService = excelService;
+        }
+
+        // GET: api/Roles
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Role>>> GetRoles()
+        {
+            return await _context.Roles.ToListAsync();
+        }
+
+        // GET: api/Roles/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Role>> GetRole(int id)
+        {
+            var role = await _context.Roles.FindAsync(id);
+
+            if (role == null)
+            {
+                return NotFound();
+            }
+
+            return role;
+        }
+
+        // PUT: api/Roles/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutRole(int id, Role role)
+        {
+            if (id != role.IdRole)
+            {
+                return BadRequest(new { message = "Несоответствие идентификатора роли" });
+            }
+
+            var errors = new List<string>();
+
+            if (string.IsNullOrWhiteSpace(role.Title))
+            {
+                errors.Add("Название роли обязательно для заполнения");
+            }
+            else if (role.Title.Length > 50)
+            {
+                errors.Add("Название роли не может превышать 50 символов");
+            }
+            else
+            {
+                var titleExists = await _context.Roles.AnyAsync(r => r.Title == role.Title && r.IdRole != id);
+                if (titleExists)
+                {
+                    errors.Add("Роль с таким названием уже существует в системе");
+                }
+            }
+
+            if (errors.Any())
+            {
+                return BadRequest(new { message = "Ошибка валидации", errors = errors });
+            }
+
+            _context.Entry(role).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!RoleExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        // POST: api/Roles
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        public async Task<ActionResult<Role>> PostRole(Role role)
+        {
+            var errors = new List<string>();
+
+            if (string.IsNullOrWhiteSpace(role.Title))
+            {
+                errors.Add("Название роли обязательно для заполнения");
+            }
+            else if (role.Title.Length > 50)
+            {
+                errors.Add("Название роли не может превышать 50 символов");
+            }
+            else
+            {
+                var titleExists = await _context.Roles.AnyAsync(r => r.Title == role.Title);
+                if (titleExists)
+                {
+                    errors.Add("Роль с таким названием уже существует в системе");
+                }
+            }
+
+            if (errors.Any())
+            {
+                return BadRequest(new { message = "Ошибка валидации", errors = errors });
+            }
+
+            _context.Roles.Add(role);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetRole", new { id = role.IdRole }, role);
+        }
+
+        // DELETE: api/Roles/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteRole(int id)
+        {
+            var role = await _context.Roles.FindAsync(id);
+            if (role == null)
+            {
+                return NotFound();
+            }
+
+            var hasUsers = await _context.Users.AnyAsync(u => u.RoleId == id);
+            if (hasUsers)
+            {
+                return BadRequest(new
+                {
+                    message = "Невозможно удалить роль",
+                    errors = new List<string> { "Существуют пользователи с этой ролью. Сначала измените роль пользователей или удалите их." }
+                });
+            }
+
+            _context.Roles.Remove(role);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        private bool RoleExists(int id)
+        {
+            return _context.Roles.Any(e => e.IdRole == id);
+        }
+    }
+}

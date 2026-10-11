@@ -1,0 +1,12 @@
+@startuml
+class Review <<partial>> {
+    + IdReview : int <<get>> <<set>>
+    + BookId : int <<get>> <<set>>
+    + UsersId : int <<get>> <<set>>
+    + Rating : int <<get>> <<set>>
+    + TextReview : string <<get>> <<set>>
+}
+Review --> "AddDate" DateOnly
+Review --> "Book" Book
+Review --> "Users" User
+@enduml
